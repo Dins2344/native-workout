@@ -7,7 +7,8 @@ import {
 
 export default function Index() {
   const [isOpen, setIsOpen] = useState(false);
-  const txtCount = [1, 2, 3, 4, 5, 6, 7, 8, 910, 11, 12, 13, 14, 15,16,17,18,19];
+  // const txtCount = [1, 2, 3, 4, 5, 6, 7, 8, 910, 11, 12, 13, 14, 15,16,17,18,19];
+  const txtCount = [...new Array(20)].map((_,i)=>i)
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View
@@ -29,8 +30,8 @@ export default function Index() {
           <View style={styles.modalContainer}>
             <View style={styles.modalDiv}>
               <ScrollView style={{ display: "flex", flexDirection: "column" }}>
-              {txtCount.map((count) => (
-                <Text key={count}>Hi Iam open {count}</Text>
+              {txtCount.map((count,i) => (
+                <Text key={i}>Hi Iam open {i}</Text>
               ))}
             </ScrollView>
               {/* <ScrollView style={{ display: "flex", flexDirection: "column" }}>
